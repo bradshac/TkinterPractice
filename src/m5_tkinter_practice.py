@@ -79,7 +79,7 @@ def main():
     multiply__button['command'] = lambda: multiply_hi(my_entry_box, my_entry_box2)
     multiply__button.grid()
     # ------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # Done: 8. As time permits, do other interesting GUI things!
     # ------------------------------------------------------------------
     root.mainloop()
 def print_hello():
