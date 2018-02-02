@@ -20,7 +20,7 @@ def main():
     root.title('Hello!')
 
     # Frame
-    frame1 = ttk.Frame(root)
+    frame1 = ttk.Frame(root, padding=20)
     frame1.grid()
 
     # Label
