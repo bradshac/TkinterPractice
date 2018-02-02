@@ -12,25 +12,25 @@ from tkinter import ttk
 def main():
     """ Constructs a GUI with stuff on it. """
     # ------------------------------------------------------------------
-    # TODO: 2. After reading and understanding the m1e module,
+    # done: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # ------------------------------------------------------------------
     root = tkinter.Tk()
     # ------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # done: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # ------------------------------------------------------------------
-    frame1 = ttk.Frame(root, padding=20)
+    frame1 = ttk.Frame(root, padding=50)
     frame1.grid()
     # ------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # done: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # ------------------------------------------------------------------
     say_hello__button = ttk.Button(frame1, text='say hello')
     say_hello__button.grid()
 
     # ------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # Done: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # ------------------------------------------------------------------
@@ -43,7 +43,12 @@ def main():
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # ------------------------------------------------------------------
+    my_entry_box = ttk.Entry(frame1)
+    my_entry_box.grid()
 
+    multiply__button = ttk.Button(frame1, text='check for ok')
+    multiply__button['command'] = lambda: check_for_ok(my_entry_box)
+    multiply__button.grid()
     # ------------------------------------------------------------------
     # TODO: 7.
     #    -- Put a second Entry on the Frame.
@@ -67,13 +72,32 @@ def main():
     #      s = entry_box.get()
     #      n = int(s)
     ####################################################################
+    my_entry_box2 = ttk.Entry(frame1)
+    my_entry_box2.grid()
 
+    multiply__button = ttk.Button(frame1, text='multiply print')
+    multiply__button['command'] = lambda: multiply_hi(my_entry_box, my_entry_box2)
+    multiply__button.grid()
     # ------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # ------------------------------------------------------------------
     root.mainloop()
 def print_hello():
     print('Hello')
+
+def check_for_ok(entry_box):
+    contents = entry_box.get()
+    if contents == 'ok':
+        print('Hello')
+    else:
+        print('goodbye')
+
+
+def multiply_hi(entry_box, entry_box2):
+    s = entry_box2.get()
+    n = int(s)
+    for k in range(n):
+        print(entry_box.get())
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
